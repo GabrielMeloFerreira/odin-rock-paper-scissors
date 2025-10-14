@@ -1,11 +1,12 @@
 let humanScore = 0
 let computerScore = 0
+let round = 1
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
     let computerChoice = ""
 
-    if (randomNumber === 0) {
+    if (randompedNumber === 0) {
         computerChoice = "pedra";
     }
     if (randomNumber === 1) {
@@ -24,8 +25,7 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 function playRound(humanSelection, computerSelection) {
 
@@ -49,6 +49,14 @@ function playRound(humanSelection, computerSelection) {
     console.log(humanScore, computerScore)
 }
 
-playRound(humanSelection, computerSelection);
+while (round < 6) {
+    console.log("Round:", round);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    round++;
+}
+
+
 
 
